@@ -1,0 +1,38 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "openpose",
+            "program": "${workspaceFolder}/ext/openpose/build/examples/openpose/openpose.bin",
+            "stopAtEntry": true,
+            "environment": [
+                {"name":"GPU" , "value": "0"},
+                {"name":"CAMERA" ,"value":"PINHOLE"},
+                {"name":"EXP_NAME_1" , "value":"stage1"},
+                {"name":"EXP_NAME_2" , "value":"stage2"},
+                {"name":"EXP_NAME_3" , "value":"stage3"},
+                {"name":"CUDA_VISIBLE_DEVICES" , "value":"0"},
+                {"name": "PROJECT_DIR" , "value": "/home/ljy/work/Li/GaussianHaircut"},
+                {"name":"BLENDER_DIR" ,"value":"/home/ljy/work/Li/blender-3.6.19-linux-x64/blender"},
+                {"name": "DATA_PATH" , "value": "/home/ljy/work/Li/GaussianHaircut/input"}
+            ],
+            "args": ["--image_dir", "/home/ljy/work/Li/GaussianHaircut/input/images_4",
+                    "--scale_number", "4",
+                    "--scale_gap", "0.25",
+                    "--face",
+                    "--hand",
+                    "--display", "0",
+                    "--write_json", "/home/ljy/work/Li/GaussianHaircut/input/openpose/json",
+                    "--write_images", "/home/ljy/work/Li/GaussianHaircut/input/openpose/images",
+                    "--write_images_format", "jpg"
+                    ],
+            "cwd": "${workspaceFolder}/ext/openpose"  //工作目录
+        }
+    ]
+}
